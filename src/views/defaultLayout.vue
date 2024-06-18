@@ -1,7 +1,7 @@
 <template>
     <div class="cartInfo mr-1">
         <router-link :to="{ name: 'shoppingCart' }" id="cartLink">
-            <h2>Items in Cart: {{ cartItemCount }}<i class="fas fa-shopping-cart ml-2"></i></h2>
+            <h2 class="itemsCart">Items in Cart: {{ cartItemCount }}<i class="fas fa-shopping-cart ml-2"></i></h2>
         </router-link>
     </div>
     <routerView />

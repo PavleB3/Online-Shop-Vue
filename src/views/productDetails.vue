@@ -1,6 +1,9 @@
 <template>
     <div class="w-xl-100 w-lg-75 w-md-50 w-sm-25 mx-auto d-flex flex-column justify-center align-center"
         id="productDetails" v-if="product">
+        <router-link :to="{name: 'catalogView'}">
+            <v-btn class="position-absolute" id="backBtn">Go Back To Catalog</v-btn>
+        </router-link>
         <h1 class="my-5">{{ product.title }}</h1>
         <div class="productFinal">
             <div class="w-75 mx-auto d-flex flex-start">
@@ -11,7 +14,7 @@
                     <h3 class="mt-5 ml-3"><b>Shipping</b>: {{ product.shippingInformation }}</h3>
                     <h3 class="mt-5 ml-3"><b>Availability</b>: {{ product.availabilityStatus }}</h3>
                     <pre
-                        class="mt-3"><h3> <i class="fas fa-star" style="color: #FFD43B;"></i> Rating: {{ product.rating }}</h3></pre>
+                        class="mt-3"><h3> <i class="fas fa-star" style="color: #FFD43B;"></i> Rating: {{ product.rating }}/5</h3></pre>
                     <pre
                         class="mt-3 ml-3"><h3><i class="fas fa-tag mr-2"></i>Your Discount is: {{ product.discountPercentage }}$</h3></pre>
                     <h2 class="ml-3" id="finalPrice">Your final price is: {{ (product.price -
@@ -185,5 +188,11 @@ h2 {
     color: white;
     position: fixed;
     top: 10px;
+}
+#backBtn{
+    top:120px;
+    left:10px;
+    background:gray;
+    color:white;
 }
 </style>

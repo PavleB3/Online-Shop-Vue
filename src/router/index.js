@@ -33,9 +33,9 @@ const routes = [
         component: shoppingCart
       },
       {
-        path:'/login',
-        name:'loginForm',
-        component:loginForm
+        path: '/login',
+        name: 'loginForm',
+        component: loginForm
       }
     ]
   },

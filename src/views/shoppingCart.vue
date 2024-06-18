@@ -15,7 +15,7 @@
                 <h3 class="mt-3 ml-5">Price: {{ (items.price - items.discountPercentage).toFixed(2) }}$</h3>
                 <h3 class="mt-3 ml-5">{{ items.shippingInformation }}</h3>
                 <v-btn id="removeButton" class="ml-5" @click="removeItem(index)">Remove item</v-btn>
-                <v-btn id="buyButton" @click="buying(items)">Buy Item</v-btn>
+                <v-btn id="buyButton" @click="buying(items, index)">Buy Item</v-btn>
             </div>
         </div>
     </div>
@@ -42,8 +42,8 @@ export default {
         removeProduct(index) {
             this.removeItem(index)
         },
-        buying(items) {
-            this.buyItem(items)
+        buying(item, index) {
+            this.buyItem({ product: item, index: index})
         }
     }
 }
