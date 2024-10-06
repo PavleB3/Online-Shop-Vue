@@ -6,6 +6,10 @@
                     {{ link.label }}
                 </router-link>
             </v-col>
+            <div class="d-flex">
+                <router-link :to="{ name: 'Cart' }" class="linkClass">Cart</router-link>
+                <div id="cartNumber" class="d-flex justify-center align-center mt-1" v-if="cartItemCount >= 1">{{ cartItemCount }}</div>
+            </div>
         </v-row>
         <v-row justify="center" align="center" v-if="isMobile">
             <v-col cols="auto" class="mb-5">
@@ -18,9 +22,9 @@
                     <v-list>
                         <v-list-item v-for="(link, index) in routerLinks" :key="index" :value="index" class="lista">
                             <v-list-item-title>
-                            <router-link :to="{name: link.name}" class="mobileLinkClass">
-                                {{ link.label }}
-                            </router-link>
+                                <router-link :to="{ name: link.name }" class="mobileLinkClass">
+                                    {{ link.label }}
+                                </router-link>
                             </v-list-item-title>
                         </v-list-item>
                     </v-list>
@@ -31,13 +35,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
     data() {
         return {
             routerLinks: [
                 { name: "Home", label: "Home" },
                 { name: "Catalog", label: "Catalog" },
-                { name: "Cart", label: "Cart" },
             ],
             isMobileMenuVisible: false,
             isDesktop: false,
@@ -60,6 +64,11 @@ export default {
             this.isDesktop = width >= 600;
             this.isMobile = width < 600;
         }
+    },
+    computed: {
+        ...mapGetters([
+            'cartItemCount'
+        ])
     }
 }
 </script>
@@ -92,8 +101,18 @@ export default {
     width: 100%;
     left: 0;
 }
+
 .mobileLinkClass {
-    text-decoration:none;
+    text-decoration: none;
     color: black;
+}
+
+#cartNumber {
+    height: 15px;
+    width: 15px;
+    padding:5px;
+    border-radius: 50%;
+    background: rgba(205, 27, 244, 0.8);
+    color: white;
 }
 </style>

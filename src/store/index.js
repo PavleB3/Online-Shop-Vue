@@ -10,7 +10,8 @@ export default createStore({
   getters: {
     getFetchedProducts: state => state.products,
     getSelectedProduct: state => state.selectedProduct,
-    getCartItem: state => state.cart
+    getCartItem: state => state.cart,
+    cartItemCount: state => state.cart.length,
   },
   mutations: {
     setFetchedProducts(state, products) {

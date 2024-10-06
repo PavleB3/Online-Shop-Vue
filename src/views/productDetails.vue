@@ -19,7 +19,19 @@
                   }}</span>
                 <span class="mb-3"><span class="bold">Price:</span> {{ getSelectedProduct.price }}$</span>
                 <div id="cart" class="d-flex flex-row align-center">
-                  <v-btn class="button mt-3" @click="addItem()">Add to Cart</v-btn>
+                  <div class="text-center ma-2">
+                    <v-btn @click="addItem()" class="button mt-3">
+                      Add to Cart
+                    </v-btn>
+                    <v-snackbar v-model="snackbar" id="snackBar">
+                      {{ text }}
+                      <template v-slot:actions>
+                        <v-btn color="pink" variant="text" @click="snackbar = false">
+                          Close
+                        </v-btn>
+                      </template>
+                    </v-snackbar>
+                  </div>
                   <i class="fa-solid fa-cart-shopping cart mt-3 ml-3"></i>
                 </div>
               </div>
@@ -37,14 +49,20 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 export default {
+  data() {
+    return {
+      snackbar: false,
+      text: 'Item added to Cart!'
+    }
+  },
   methods: {
     ...mapActions([
       'fetchProductById',
       'addToCart'
     ]),
     addItem() {
-      this.addToCart(this.getSelectedProduct)
-      alert("U added to cart!")
+      this.addToCart(this.getSelectedProduct);
+      this.snackbar = true;
     }
   },
   computed: {
@@ -79,13 +97,13 @@ span {
 }
 
 .button {
-  width: 35%;
   color: rgba(205, 27, 244, 0.8);
 }
 
 .title {
   color: rgba(205, 27, 244, 0.8);
 }
+
 .cart {
   color: rgba(205, 27, 244, 0.8);
   font-size: 25px;
