@@ -5,6 +5,8 @@ import productDetails from '../views/productDetails.vue'
 import shoppingCart from '../views/shoppingCart.vue'
 import checkoutView from '../views/checkoutView.vue'
 import logIn from '../views/logIn.vue'
+import accRecovery from '../views/accRecovery.vue'
+import createAcc from '../views/createAcc.vue'
 
 const routes = [
   {
@@ -36,6 +38,16 @@ const routes = [
     path: '/login',
     name: 'login',
     component: logIn
+  },
+  {
+    path: '/recovery',
+    name: 'recovery',
+    component: accRecovery
+  },
+  {
+    path: '/createAccount',
+    name: 'createAccount',
+    component: createAcc
   },
   
 ]
