@@ -102,7 +102,7 @@ export default {
 
         },
         signUpForm() {
-            if (!this.getData.firstName || !this.getData.lastName || !this.getData.email || !this.getData.password
+            if (!this.getData.firstName || !this.getData.lastName ||!this.getData.email || !this.getData.password
                 || !this.getData.month || !this.getData.day || !this.getData.year || !this.getData.gender) {
                 alert("You need to fill in all inputs!")
             } else {
@@ -154,6 +154,7 @@ export default {
     width: 410px;
     background: rgba(66, 147, 218, 1);
 }
+
 #passReq {
     color: rgba(66, 147, 218, 1);
 }
@@ -230,5 +231,33 @@ export default {
 #day option,
 #year option {
     color: gray
+}
+@media (max-width: 375px){
+    #login{
+        width:370px;
+    }
+    #emailInput{
+        width:360px;
+    }
+    #passwordInput{
+        width:360px;
+    }
+    #logInBtn{
+        width:360px;
+    }
+}
+@media (max-width: 390px){
+    #login{
+        width:380px;
+    }
+    #emailInput{
+        width:360px;
+    }
+    #passwordInput{
+        width:360px;
+    }
+    #logInBtn{
+        width:360px;
+    }
 }
 </style>

@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import defaultLayout from '../views/defaultLayout.vue'
 import catalogView from '../views/catalogView.vue'
 import productDetails from '../views/productDetails.vue'
 import shoppingCart from '../views/shoppingCart.vue'
@@ -9,35 +8,28 @@ import loginForm from '../views/loginForm.vue'
 const routes = [
   {
     path: '/',
-    name: 'defaultLayout',
-    component: defaultLayout,
-    children: [
-      {
-        path: '/',
-        name: 'home',
-        component: HomeView
-      },
-      {
-        path: '/catalog',
-        name: 'catalogView',
-        component: catalogView
-      },
-      {
-        path: '/productDetails/:id?',
-        name: 'productDetails',
-        component: productDetails,
-      },
-      {
-        path: '/cart',
-        name: 'shoppingCart',
-        component: shoppingCart
-      },
-      {
-        path: '/login',
-        name: 'loginForm',
-        component: loginForm
-      }
-    ]
+    name: 'home',
+    component: HomeView,
+  },
+  {
+    path: '/catalog',
+    name: 'catalogView',
+    component: catalogView,
+  },
+  {
+    path: '/productDetails/:id?',
+    name: 'productDetails',
+    component: productDetails,
+  },
+  {
+    path: '/cart',
+    name: 'shoppingCart',
+    component: shoppingCart,
+  },
+  {
+    path: '/login',
+    name: 'loginForm',
+    component: loginForm
   },
   {
     path: '/about',

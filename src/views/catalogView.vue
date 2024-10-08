@@ -1,12 +1,18 @@
 <template>
-    <div class="h-100 w-100 mx-auto" id="divProducts">
+    <div class="mx-auto" id="divProducts">
         <h1 class="ml-5" color="white">Catalog</h1>
         <v-container>
-            <v-row class="h-100">
+            <v-row>
                 <v-col v-for="product in getFetchedProducts" :key="product" col="12" sm="6" md="4" lg="3">
                     <v-card class="mx-auto rounded-lg" max-width="344" id="itemCard">
                         <router-link :to="{ name: 'productDetails', params: { id: product.id } }">
-                            <v-img height="200px" :src="product.images[0]" cover color="rgba(50, 48, 49, 1)"></v-img>
+                            <v-img height="200px" :src="product.images[0]" cover color="rgba(50, 48, 49, 1)">
+                                <template v-slot:placeholder>
+                                    <div class="d-flex align-center justify-center fill-height">
+                                        <v-progress-circular color="grey-lighten-4" indeterminate></v-progress-circular>
+                                    </div>
+                                </template>
+                            </v-img>
                         </router-link>
 
                         <v-card-title>

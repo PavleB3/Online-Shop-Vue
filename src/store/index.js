@@ -17,13 +17,15 @@ export default createStore({
       day: "",
       year: "",
       gender: "",
-    }
+    },
+    selectedProduct: null
   },
   getters: {
     getFetchedProducts: state => state.products,
     getCartItems: state => state.cart,
     cartItemCount: state => state.cart.length,
-    getSignUpData: state => state.signUpData
+    getSignUpData: state => state.signUpData,
+    getSelectedProduct: state => state.selectedProduct
   },
   mutations: {
     setFetchedProducts(state, products) {
@@ -40,6 +42,9 @@ export default createStore({
     },
     setSignUpData(state, data) {
       state.signUpData = data
+    },
+    setSelectedProduct(state, product){
+      state.selectedProduct = product
     }
   },
   actions: {
@@ -81,6 +86,12 @@ export default createStore({
       await axios.post(`https://jsonplaceholder.typicode.com/posts`, state.signUpData)
         .then(response => console.log(response))
         .catch(error => console.log(error))
+    },
+    fetchProductId: async ({ commit }, productId) =>{
+      await axios.get(`https://dummyjson.com/products/${productId}`)
+      .then(response => {
+        commit('setSelectedProduct', response.data)
+      })
     }
   },
   modules: {
