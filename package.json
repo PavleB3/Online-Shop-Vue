@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "ecommerce",
+=======
+  "name": "onlineshop",
+>>>>>>> 8fce77217d0ae855b284f28f471faf0b020e3a97
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +13,11 @@
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
+<<<<<<< HEAD
     "axios": "^1.7.2",
+=======
+    "axios": "^1.7.7",
+>>>>>>> 8fce77217d0ae855b284f28f471faf0b020e3a97
     "core-js": "^3.8.3",
     "roboto-fontface": "*",
     "vue": "^3.2.13",
@@ -28,8 +36,11 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+<<<<<<< HEAD
     "sass": "^1.77.4",
     "sass-loader": "^14.2.1",
+=======
+>>>>>>> 8fce77217d0ae855b284f28f471faf0b020e3a97
     "vue-cli-plugin-vuetify": "~2.5.8",
     "webpack-plugin-vuetify": "^2.0.0-alpha.0"
   }

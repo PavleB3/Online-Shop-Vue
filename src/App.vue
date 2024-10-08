@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <v-app>
     <v-main>
       <navBar />
@@ -8,11 +9,18 @@
         </router-link>
       </div>
       <router-view />
+=======
+  <v-app id="app">
+    <navBar/>
+    <v-main>
+      <router-view/>
+>>>>>>> 8fce77217d0ae855b284f28f471faf0b020e3a97
     </v-main>
   </v-app>
 </template>
 
 <script>
+<<<<<<< HEAD
 import { mapGetters } from 'vuex';
 import navBar from './components/navBar.vue'
 export default {
@@ -43,4 +51,17 @@ export default {
   color: white;
   text-decoration: none;
 }
+=======
+import navBar from './components/navBar.vue'
+  export default{
+    components:{
+      navBar
+    }
+  }
+</script>
+<style>
+  #app {
+    background: rgba(249, 243, 246, 0.8);
+  }
+>>>>>>> 8fce77217d0ae855b284f28f471faf0b020e3a97
 </style>
