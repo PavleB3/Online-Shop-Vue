@@ -21,7 +21,7 @@ An online shopping platform built using Vue.js with Vuetify for UI components. T
 - **Vuex**: State management for handling global state like cart data and user authentication.
 - **Axios**: For making HTTP requests to external APIs.
 - **Free Public API**: Used for fetching product data and simulating server interactions.
->>>>>>> 8fce77217d0ae855b284f28f471faf0b020e3a97
+  
 ## Project setup
 ```
 npm install
