@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 # ecommerce
 
-=======
 # onlineshop
 An online shopping platform built using Vue.js with Vuetify for UI components. The project also utilizes Vuex for state management and Axios for API requests. It features essential e-commerce functionalities like login, signup, product catalog, cart, and a checkout process with payment simulation.
 
